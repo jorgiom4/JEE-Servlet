@@ -1,5 +1,6 @@
 package com.instancia2.controllers;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -19,7 +20,9 @@ public class CicloVidaServlet extends HttpServlet {
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 
-        System.out.println("---- Dentro del service del servlet");
+        ServletContext servletContext = req.getServletContext();
+
+        System.out.println("---- Dentro del service del servlet ssessionTimeout: " + servletContext.getSessionTimeout());
     }
 
     @Override
