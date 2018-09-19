@@ -25,9 +25,13 @@ public class ConnectToDBServlet extends HttpServlet {
 
             Statement st = con.createStatement();
 
-            String query = "CREATE TABLE IF NOT EXISTS cice (id INT AUTO_INCREMENT NOT NULL, titulo VARCHAR(255), PRIMARY KEY (id))";
+            String query = "CREATE DATABASE IF NOT EXISTS cice";
+            String query1 = "USE cice";
+            String query2 = "CREATE TABLE mi_tabla (id INT AUTO_INCREMENT NOT NULL, titulo VARCHAR(255), PRIMARY KEY (id))";
 
             st.execute(query);
+            st.execute(query1);
+            st.execute(query2);
 
             st.close();
 
